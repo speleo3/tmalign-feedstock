@@ -5,15 +5,13 @@ package:
   version: {{ version }}
 
 source:
-  url: http://zhanglab.ccmb.med.umich.edu/TM-align/TMtools{{ version }}.tar.gz
+  url: https://zhanggroup.org/TM-align/TMtools{{ version }}.tar.gz
   md5: 28da44a874be2ca8d6c6c81ba26e5632
 
 requirements:
   build:
     - {{ compiler('fortran') }} [unix]
     - m2w64-gcc-fortran [win]
-    # https://github.com/ContinuumIO/anaconda-issues/issues/8812
-    - libgcc-ng         [linux]
     # ld: file not found: crtfastmath.o
     - gcc 4.8           [osx]
   host:
@@ -21,7 +19,7 @@ requirements:
     - gcc 4.8           [osx]
 
 build:
-  number: 2
+  number: 3
 
 test:
   commands:
